@@ -12,3 +12,29 @@
   border-radius: 10px;
   margin-top: 30px;
 }
+
+@media (max-width: 1024px) {
+  .main-layout {
+    grid-template-columns: 1fr;  /* Side by side → stacked */
+    height: auto;
+    margin-top: 20px;
+    gap: 30px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    width: 95%;        /* screen ke almost full width */
+    padding: 0;
+    gap: 25px;
+  }
+  .sidebar-container {
+    width: 100%;
+  }
+
+  .board-heading {
+    width: 100%;
+  }
+}
