@@ -1,0 +1,239 @@
+.sidebar-container{
+    background-color: #3b3d3f;
+    padding: 20px;
+    height:75%;
+    border-right: 2px solid grey;
+    border-radius: 10px;
+}
+.sidebar-container{
+    width:100%;
+}
+.sidebar-heading-container{
+  display: flex;              
+  justify-content: space-between;  
+  width: 100%;                
+  cursor: pointer;
+}
+
+.sidebar-heading-container p{
+  padding-left: 50px;
+  padding-right: 50px;
+   color: #B3BEC1;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.sidebar-heading-container p.active {
+  color: #FFFFFF;           
+  border-bottom: 2px solid #00ff00; 
+}
+
+.sidebar-amount{
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-input {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background: #1b1d1f;
+  border: 2px solid transparent;
+  padding: 7px 10px;
+  border-radius: 10px;
+  gap: 6px;
+  width: 90%;      
+  transition: 0.25s;
+  margin-bottom: 10px;
+}
+
+
+.custom-input:hover {
+   border: 1px solid #00ff00; 
+}
+
+.flag {
+  width: 25px;
+  border-radius: 3px;
+}
+
+.custom-input input {
+  width: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+}
+
+.half, .double {
+  background: #2d3135;
+  padding: 4px 8px;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.half:hover, .double:hover {
+  background: #3d4247;
+}
+
+
+.sidebar-rupees {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.sidebar-rupees div {
+  color: #FFFFFF;
+  background-color: #3A4142;
+  font-weight: bold;
+  width: 78px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;     
+  border-radius: 6px;    
+  transition: 0.25s;  
+}
+
+.sidebar-rupees div:hover {
+  background-color: #4b5254;  
+  transform: scale(1.03);   
+  cursor: not-allowed;
+
+}
+
+.Mines {
+    color:#B3BEC1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.range-value {
+  appearance: none;         
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  width:70%;
+  height: 6px;
+  background: transparent;   
+  border-radius: 4px;
+  outline: none;
+  margin: 8px 0 14px 0; 
+}
+
+.range-value::-webkit-slider-runnable-track {
+  height: 6px;
+  background:transparent; 
+  border-radius: 4px;
+}
+
+.range-value {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 75%;
+  height: 8px;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+}
+
+.range-value::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.range-value::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+  position: relative;
+   margin-top: -10px;
+}
+
+.range-value::-webkit-slider-thumb::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(#c1c1c1 2px, transparent 2px),
+                    linear-gradient(#c1c1c1 2px, transparent 2px),
+                    linear-gradient(#c1c1c1 2px, transparent 2px);
+  background-size: 100% 4px;
+  background-position: 0 0, 0 5px, 0 10px;
+  background-repeat: no-repeat;
+}
+
+
+.sidebar-buttons {
+   margin-top: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.first {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(90deg, #31ee88, #6df7ac);
+  color: #000;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  cursor: pointer;
+}
+.second {
+   width: 100%;
+  height: 38px;
+  background: #2f3536;
+  border-radius: 8px;
+  color: #9aa6aa;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: default;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.info-icon {
+  font-size: 12px;
+  margin-left: 6px;
+  cursor: pointer;
+  color: #0be780;       
+}
+.first:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

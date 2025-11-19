@@ -1,0 +1,67 @@
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(5, 70px);
+    gap:16px;
+    margin-top: 20px;
+    background-image: url("/board_image01.webp"), url("/board_image02.webp"); 
+    background-position: top left, top right; 
+}
+.board-boxes{
+ border: 2px solid;
+  height: 76px;
+  width: 76px;
+  border-radius: 10px;
+  background-color: #4A5354;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: 0.25s;
+}
+.board-boxes:hover{
+  background-color: #434546;
+}
+.board-heading {
+    background-color: #323738;
+    color: #B3BEC1;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    width: 80%;
+    margin-top: 0px;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.board-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.board-boxes.diamond {
+ background-color: #8e44ff; 
+  color: #fff;
+}
+
+ .board-boxes.bomb {
+  background-color: #ff3b3b;
+  color: #fff;
+}
+
+
+.board-boxes:hover {
+  background-color: #434546;
+}
+
+.board-boxes.faded {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.board-box-container{
+    background-color: #2F3536;
+    padding: 10px 23px;
+    border-radius: 10px;
+}
