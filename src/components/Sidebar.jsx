@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { memo } from "react";
 import "./Sidebar.css"
-function Sidebar({ rangeValue, onRangeChange, onBet, isGameRunning }) {
+function Sidebar({ rangeValue, onRangeChange, onBet, isGameRunning, remainingGems  }) {
   const [money, setMoney] = useState(1)
   function handleRangeValue(e) {
     onRangeChange(Number(e.target.value));
@@ -21,7 +21,9 @@ function Sidebar({ rangeValue, onRangeChange, onBet, isGameRunning }) {
       <div className="custom-input">
   
             <div className="left-group">
-                <span className="flag">🇮🇳</span>
+                <span className="flag">
+                    <img src="flag_icon.png" alt="Icon" width="20px" style={{display:'flex', justifyContent:'center', alignItems:'center'}}/>
+                </span>
                 <input type="text" value={money} onChange={(e) =>setMoney(e.target.value)}/>
             </div>
 
@@ -42,7 +44,7 @@ function Sidebar({ rangeValue, onRangeChange, onBet, isGameRunning }) {
             <p className="Mines">Mines</p>
         </div>
         <div className="Range">
-            <span style={{color:'#FFFFFF', padding:'10px'}}>{rangeValue}</span>
+            <span style={{color:'#FFFFFF', padding:'10px'}} className="range-label">{rangeValue}</span>
            <input
             type="range"
             min="1"
@@ -55,7 +57,7 @@ function Sidebar({ rangeValue, onRangeChange, onBet, isGameRunning }) {
             }}
              />
 
-            <span style={{color:'#B3BEC1',padding:'10px'}}>24</span>
+            <span style={{color:'#B3BEC1',padding:'10px'}} className="range-label range-max">24</span>
         </div>
         <div className="sidebar-buttons">
             <div> <button
@@ -66,6 +68,15 @@ function Sidebar({ rangeValue, onRangeChange, onBet, isGameRunning }) {
             Bet
           </button></div>
             <div><button className="second">Betting with 0 will enter demo code</button></div>
+                          {isGameRunning && remainingGems !== null && (
+        <div className="gems-section">
+            <p className="gems-label">Gems</p>
+            <div className="gems-box">{remainingGems}</div>
+
+            <p className="profit-label">Total profit (1.02x)</p>
+            <div className="profit-box">0</div>
+        </div>
+        )}
         </div>
         </div>
     )

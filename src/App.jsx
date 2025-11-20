@@ -8,22 +8,31 @@ export default function App() {
       const [rangeValue, setRangeValue] = useState(1);
       const [resetKey, setResetKey] = useState(0);     
       const [isGameRunning, setIsGameRunning] = useState(false);
+      const [remainingGems, setRemainingGems] = useState(null); 
 
       const handleRangeChange = (value) => {
       setRangeValue(value);
       setIsGameRunning(false);
       setResetKey((k) => k + 1);
+       setRemainingGems(null);   
   };
 
   const handleBet = () => {
     if (isGameRunning) return;
     setIsGameRunning(true);
     setResetKey((k) => k + 1); 
+     setRemainingGems(null);   
   };
 
    const handleGameOver = () => {
     setIsGameRunning(false);
+     setRemainingGems(null);   
   };
+
+  const handleSafeReveal = (safeLeft) => {
+  setRemainingGems(safeLeft);        
+};
+
 
   return(
     <div className="main-layout">
@@ -32,6 +41,7 @@ export default function App() {
         onRangeChange={handleRangeChange}
         onBet={handleBet}
         isGameRunning={isGameRunning}
+         remainingGems={remainingGems} 
       />
       <Board
         mines={rangeValue}
@@ -39,6 +49,7 @@ export default function App() {
         resetKey={resetKey}
         isGameRunning={isGameRunning}
         onGameOver={handleGameOver}
+         onSafeReveal={handleSafeReveal} 
       />
     </div>
   )

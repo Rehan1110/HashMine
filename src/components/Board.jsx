@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Board.css";
 import { memo } from "react";
 
-function Board({ mines, totalCells, resetKey, isGameRunning, onGameOver }) {
+function Board({ mines, totalCells, resetKey, isGameRunning, onGameOver, onSafeReveal  }) {
   const [bombs, setBombs] = useState([]);
   const [revealed, setRevealed] = useState(Array(totalCells).fill(false));
   const [gameOver, setGameOver] = useState(false);
@@ -59,6 +59,11 @@ function Board({ mines, totalCells, resetKey, isGameRunning, onGameOver }) {
       ).length;
       const totalSafeCells = totalCells - bombs.length;
 
+      const remaining = totalSafeCells - revealedSafeCount;
+        if (onSafeReveal) {
+          onSafeReveal(remaining);
+        }
+
       if (revealedSafeCount === totalSafeCells) {
         setGameOver(true);
         setIsWin(true);
@@ -107,7 +112,13 @@ function Board({ mines, totalCells, resetKey, isGameRunning, onGameOver }) {
               className={className}
               onClick={() => handleCellClick(index)}
             >
-              {shouldShowContent && (isBomb ? "💣" : "💎")}
+             {shouldShowContent && (
+            <img
+              src={isBomb ? "/bomb.png" : "/diamond.png"}
+              alt={isBomb ? "Bomb" : "Diamond"}
+              className="icon"
+            />
+          )}
             </div>
           );
         })}

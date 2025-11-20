@@ -1,13 +1,18 @@
 .sidebar-container{
-    background-color: #3b3d3f;
-    padding: 20px;
-    height:75%;
-    border-right: 2px solid grey;
-    border-radius: 10px;
+ background-color: #3b3d3f;
+  padding: 10px 20px 20px;  
+  height: 100%;            
+  border-right: 2px solid grey;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box;  
+  flex: 0 0 32%;   
 }
-.sidebar-container{
-    width:100%;
+.left-group {
+  display: flex;
+  align-items: center;    
+  gap: 6px;              
 }
+
 .sidebar-heading-container{
   display: flex;              
   justify-content: space-between;  
@@ -16,17 +21,32 @@
 }
 
 .sidebar-heading-container p{
-  padding-left: 50px;
-  padding-right: 50px;
-   color: #B3BEC1;
+   flex: 1;                   
+  text-align: center;  
+  margin: 0 24px;    
+  color: #B3BEC1;
   font-size: 14px;
   font-weight: 600;
-  padding-bottom: 4px;
+  padding-bottom: 10px;
 }
 
 .sidebar-heading-container p.active {
   color: #FFFFFF;           
   border-bottom: 2px solid #00ff00; 
+  padding-bottom: 2px;
+   position: relative;
+  padding-bottom: 6px;
+}
+
+.sidebar-heading-container p.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;     
+  height: 2px;
+  background: #00ff00;
+  border-radius: 2px;
 }
 
 .sidebar-amount{
@@ -38,19 +58,36 @@
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  background: #1b1d1f;
+  background: #242629;
   border: 2px solid transparent;
   padding: 7px 10px;
   border-radius: 10px;
   gap: 6px;
-  width: 90%;      
+  width: 100%;      
   transition: 0.25s;
   margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
+.sidebar-container > * {
+  width: 100%;
+}
 
-.custom-input:hover {
-   border: 1px solid #00ff00; 
+.Range {
+  background: #242629;
+  border: 2px solid transparent;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.25s;
+}
+
+.custom-input:focus-within {
+  border: 1px solid #00ff00;
 }
 
 .flag {
@@ -92,7 +129,7 @@
 }
 
 .sidebar-rupees div {
-  color: #FFFFFF;
+  color: #949fa1;
   background-color: #3A4142;
   font-weight: bold;
   width: 78px;
@@ -104,8 +141,6 @@
 }
 
 .sidebar-rupees div:hover {
-  background-color: #4b5254;  
-  transform: scale(1.03);   
   cursor: not-allowed;
 
 }
@@ -118,15 +153,13 @@
 
 
 .range-value {
-  appearance: none;         
-  -webkit-appearance: none; 
-  -moz-appearance: none; 
-  width:70%;
-  height: 6px;
-  background: transparent;   
-  border-radius: 4px;
+   appearance: none;
+  -webkit-appearance: none;
+  width: 80%;    
+  height: 8px;
+  border-radius: 6px;
+  background: transparent;
   outline: none;
-  margin: 8px 0 14px 0; 
 }
 
 .range-value::-webkit-slider-runnable-track {
@@ -224,6 +257,66 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+.Range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;        
+}
+.range-label {
+  display: inline-block;
+  width: 24px;        
+  text-align: center;
+}
+.right-group {
+  display: flex;
+  gap: 6px;
+}
+
+.right-group span {
+  background: #2d3135;
+  padding: 6px 12px;
+  color: #d4dadc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.right-group span:active {
+  transform: scale(0.96);
+}
+
+.gems-section {
+  margin-top: 16px;
+}
+
+.gems-label,
+.profit-label {
+  color: #B3bEC1;
+  font-size: 13px;
+  margin: 0 0 4px 2px;
+  font-weight: bold;
+}
+
+.gems-box,
+.profit-box {
+  color: #B3bEC1;
+  font-weight: bold;
+  width: 100%;
+  background: #1b1d1f;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #ffffff;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+
+
+
 
 
 
