@@ -1,5 +1,5 @@
 .board-wrapper{
-  background-image: url("./background_Image.png");
+  background-image: url("/background_Image.png");
   background-position: top left, top right; 
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
     background-color: transparent;
 }
 .board-box-container {
-  background-image: url("board_image02.webp"), url("board_image01.webp");
+  background-image: url("/board_image02.webp"), url("/board_image01.webp");
     background-repeat: no-repeat, no-repeat;
     background-size: 120px 60px, 130px 70px;
     background-position: 10px -5px, calc(100% - 10px) -5px;
